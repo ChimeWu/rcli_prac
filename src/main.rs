@@ -1,3 +1,8 @@
+use rcli_prac::run;
+
 fn main() {
-    println!("Hello, world!");
+    if let Err(err) = run() {
+        eprintln!("{}", err);
+        std::process::exit(1);
+    }
 }
