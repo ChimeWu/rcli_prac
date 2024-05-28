@@ -14,8 +14,7 @@ pub fn run() -> anyhow::Result<()> {
     let args = MyCli::parse();
     match args.subcmd {
         Commands::Csv(args) => {
-            let players = command::csv::read_csv(&args.input)?;
-            command::csv::write_json(&args.output, players)?;
+            command::csv::process_csv(&args)?;
         }
     }
     Ok(())
